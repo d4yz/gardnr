@@ -18,15 +18,16 @@ sudo cat gardnr.sql | mysql -uroot -pgardnr
 
 echo "Copying Gardnr Web Files..."
 #Rename Base folder to Gardnr and Move to Apache Web Folder
-sudo mv base gardnr
-sudo mv gardnr /var/www
+sudo rm /var/www/html -r
+sudo mv base html
+sudo mv html /var/www
 
 echo "Changing File Permissions for Gardnr Web Files..."
 #755 all folders and files
 #777 for pinglog.txt and datalog.txt
 sudo chmod -R 755 /var/www/html/gardnr
-sudo chmod 777 /var/www/html/gardnr/pinglog.txt
-sudo chmod 777 /var/www/html/gardnr/datalog.txt
+sudo chmod 777 /var/www/html/pinglog.txt
+sudo chmod 777 /var/www/html/datalog.txt
 
 echo "Fin"
 
