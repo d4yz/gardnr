@@ -22,6 +22,7 @@ if(!is_numeric($_REQUEST['id'])){
 	if (!isset($_REQUEST['light'])) { 	$light=0; 	} else {$light = $_REQUEST['light']; }
 	if (!isset($_REQUEST['moisture'])) { 	$moisture=0; } else {$moisture = $_REQUEST['moisture']; }
 	if (!isset($_REQUEST['stemp'])) { 	$stemp=0; } else {$stemp = $_REQUEST['stemp']; }
+	if (!isset($_REQUEST['hum'])) { 	$humidity=0; } else {$humidity = $_REQUEST['hum']; }
 	
 	
 	
@@ -37,20 +38,22 @@ if(!is_numeric($_REQUEST['id'])){
 	temp, 
 	light,
 	moisture,
-	soiltemp
+	soiltemp,
+	humidity
 	) 
             VALUES (
             '".$_REQUEST['id']."', 
             '".$temp."', 
 	    '".$light."', 
             '".$moisture."', 
-	    '".$stemp."'
+	    '".$stemp."',
+	     '".$humidity."'
 	    )";
 
 	$adddata= mysqli_query($db_object,$insert);
 	
 	echo '0';
-	addlog("Data from Module ID: ".$_REQUEST['id'].". T:".$temp." L:".$light." M:".$moisture." S:".$stemp." IP Address: ".$_SERVER['REMOTE_ADDR'], 2);
+	addlog("Data from Module ID: ".$_REQUEST['id'].". T:".$temp." L:".$light." M:".$moisture." S:".$stemp." H:".$humidity." IP Address: ".$_SERVER['REMOTE_ADDR'], 2);
 
 
 ?>
