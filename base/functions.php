@@ -24,6 +24,16 @@ function addlog($text,$log){
 	fclose($filename);
 }
 
+function grab_modulenickname($module_id) {	
+	global $db_object; //Declare global variable
+	
+	$qry = "SELECT * FROM modules WHERE id = '".$module_id."' LIMIT 1";
+	$qry_data = mysqli_query($db_object,$qry);
+	
+	$data = mysqli_fetch_array($qry_data, MYSQL_NUM);
+	
+	return $data[1];	 //Return Module Name
+}
 
 
 
