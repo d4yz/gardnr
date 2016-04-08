@@ -90,22 +90,26 @@ $temp_setting=$settings_data[0];	//Temp Setting
 	<h3>Module Nicknames</h3>
 	
 	<div class="container">
-		
-		<?php
-			for($x=1;$x<=16;$x++){ 	//Display 16 Module Nicknames?>
-				<form class="form-inline" role="form">
-					<div class="form-group">
-						<label for="mod<?php echo $x; ?>">Module <?php echo $x; ?>:</label>
-						<input type="text" name="mod" class="form-control" id="mod<?php echo $x; ?>" value="<?php echo grab_modulenickname($x); //Grab Nickname from Database?>">
-						<input type="text" name="modnum" class="hidden" value="<?php echo $x; ?>">
-						<button type="submit" class="btn btn-default">Update</button>
-					</div>
-				</form>
-				
-		<?php	
-			}	//End For Loop
-		?>
-		
+		<div class="row">
+			<div class="col-sm-4">
+				<?php
+					for($x=1;$x<=16;$x++){ 	//Display 16 Module Nicknames	
+						if($x==9){ echo '</div><div class="col-sm-4">'; }	//Draw a New Column	?>
+						
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label for="mod<?php echo $x; ?>">Module <?php echo $x; ?>:</label>
+								<input type="text" name="mod" class="form-control" id="mod<?php echo $x; ?>" value="<?php echo grab_modulenickname($x); //Grab Nickname from Database?>">
+								<input type="text" name="modnum" class="hidden" value="<?php echo $x; ?>">
+								<button type="submit" class="btn btn-default">Update</button>
+							</div>
+						</form>
+						
+				<?php	
+					}	//End For Loop
+				?>
+			</div>
+		</div>
 	</div>
 	
 	<hr>
