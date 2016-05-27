@@ -25,7 +25,7 @@ sudo mv html /var/www
 echo "Changing File Permissions for Gardnr Web Files..."
 #755 all folders and files
 #777 for pinglog.txt and datalog.txt
-sudo chmod -R 755 /var/www/html/gardnr
+sudo chmod -R 755 /var/www/html/
 sudo chmod 777 /var/www/html/pinglog.txt
 sudo chmod 777 /var/www/html/datalog.txt
 
