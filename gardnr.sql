@@ -1,5 +1,3 @@
-
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -15,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `moduledata` (
   `temp` float NOT NULL,
   `light` float NOT NULL,
   `moisture` float NOT NULL,
-  `soiltemp` float NOT NULL.
+  `soiltemp` float NOT NULL,
   `humidity` float NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
