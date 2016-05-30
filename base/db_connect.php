@@ -1,4 +1,7 @@
 <?php
+	##Security Check## - Check to see if file is open without
+	if(preg_match('/db_connect/',$_SERVER['PHP_SELF'])){
+	header('Location:index.php');}
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);

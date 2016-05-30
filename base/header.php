@@ -1,4 +1,10 @@
-<?php require("db_connect.php"); ?>
+<?php 
+	##Security Check## - Check to see if file is open without include
+	if(preg_match('/header/',$_SERVER['PHP_SELF'])){
+	header('Location:index.php');}
+	
+	require("db_connect.php"); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

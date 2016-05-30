@@ -1,9 +1,9 @@
 <?php
-
+##Security Check## - Check to see if file is open without include
 if(preg_match('/functions/',$_SERVER['PHP_SELF'])){
 header('Location:index.php');}
 
-
+//Thos function is used to get the data point count from the database for a particular module ID
 function grab_datapointcnt($module_id) {	
 	global $db_object; //Declare global variable
 	
@@ -13,6 +13,7 @@ function grab_datapointcnt($module_id) {
 	return number_format(mysqli_num_rows($count));
 }
 
+//This function adds data to the log text. $log 1 is for pings. If $log is 2 its data log
 function addlog($text,$log){
 	if($log=="1") $logfile="pinglog.txt";	//Select Ping Log
 	if($log=="2") $logfile="datalog.txt";	//Select Data Log
@@ -24,6 +25,7 @@ function addlog($text,$log){
 	fclose($filename);
 }
 
+//This funtion returns the nickname from the Module ID
 function grab_modulenickname($module_id) {	
 	global $db_object; //Declare global variable
 	
