@@ -41,9 +41,13 @@ function grab_modulenickname($module_id) {
 function get_url_contents($url){
         $crl = curl_init();
         $timeout = 5;
+	$header = array("Cache-Control: no-cache");
+
+	curl_setopt($crl, CURLOPT_HTTPHEADER, $header);
         curl_setopt ($crl, CURLOPT_URL,$url);
         curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+	curl_setopt($crl, CURLOPT_FRESH_CONNECT, TRUE);
         $ret = curl_exec($crl);
         curl_close($crl);
         return $ret;
@@ -58,7 +62,7 @@ function grab_current_base_version(){
 function check_new_base_version(){
 	//Head to Server to Grab current released base version
 	$new_version=get_url_contents('http://xuzzer.ipage.com/gardnr/version');
-	
+
 	//Check if grabbed version is higher then installed version
 	if($new_version > grab_current_base_version()){
 		//Display a Message
