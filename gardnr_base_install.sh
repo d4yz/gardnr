@@ -11,7 +11,7 @@ sudo apt-get install apache2 -y
 sudo apt-get install php5 libapache2-mod-php5 -y
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password gardnr'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password gardnr'
-sudo apt-get install mysql-server php5-mysql -y
+sudo apt-get install mysql-server php5-mysql php5-curl -y
 
 echo "Creating MySQL database..."
 sudo cat gardnr.sql | mysql -uroot -pgardnr
