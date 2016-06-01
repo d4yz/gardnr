@@ -2,6 +2,19 @@
 
 	<!-- Page Content -->
 	<div class="container">
+		<?php	//Check for New Version and Display Message on Top if Version is Available
+			check_new_base_version();
+		?>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		<h4>Gardnr Status</h4>
 		
 		<div class="table-responsive">
@@ -11,6 +24,7 @@
 					<th>Hostname</th>
 					<th>Base IP</th>
 					<th>Current Time</th>
+					<th>Current Base Version</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +32,7 @@
 					<td><?php system("hostname"); ?></td>
 					<td><?php system("hostname -I"); ?></td>
 					<td><?php system('date "+%b %d - %H:%M"'); ?></td>
+					<td><?php echo grab_current_base_version(); ?></td>
 				</tr>
 			     
 			</tbody>
@@ -39,7 +54,7 @@
 			<th>Nickname</th>
 			<th>Status</th>
 			<th>Data Points</th>
-			<th>Version</th>
+			<th>Module Version</th>
 			<th>IP Address</th>
 		</tr>
 	</thead>

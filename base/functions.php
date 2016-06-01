@@ -37,6 +37,47 @@ function grab_modulenickname($module_id) {
 	return $data[1];	 //Return Module Name
 }
 
+//Go to a Url and Return the Website as a Variable
+function get_url_contents($url){
+        $crl = curl_init();
+        $timeout = 5;
+        curl_setopt ($crl, CURLOPT_URL,$url);
+        curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $ret = curl_exec($crl);
+        curl_close($crl);
+        return $ret;
+}
+
+//Returns the Current Base Version
+function grab_current_base_version(){
+	return file_get_contents( "version" );
+}
+
+//Check if there is a New Base Version and Display Message
+function check_new_base_version(){
+	//Head to Server to Grab current released base version
+	$new_version=get_url_contents('http://xuzzer.ipage.com/gardnr/version');
+	
+	//Check if grabbed version is higher then installed version
+	if($new_version > grab_current_base_version()){
+		//Display a Message
+		echo '<div class="container"><div class="alert alert-success" id="Success">
+		 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>Yippee!</strong> There is a new Gardnr Base version available (Version '.$new_version.') Head over to www.gardnr.io to update.
+		</div></div>';	//Display Alert ID
+	}
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -45,7 +45,7 @@
 				<li><a href="viewdata.php">View Data</a></li>
 				<li><a href="viewlog.php">View Log</a></li>
 				<li><a href="settings.php">Settings</a></li>
-				<li><a href="#contact">Help</a></li>
+				<li><a href="#">Help</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>

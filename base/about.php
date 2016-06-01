@@ -6,8 +6,18 @@
 
     <!-- Page Content -->
     <div class="container">
+    
 	<h2>About</h2>
 	<p>A little information about the Gardnr Project</p>
+	
+	<h4>Version History - Gardnr Base</h4>
+	
+	<h5>Version 0.3 - May 31, 2016</h5>
+	<ul>
+		<li>Added Security to Included files so they can not be accessed directly</li>
+		<li>Added Display of Current Base Version on Index</li>
+		<li>Added Check and Alert of new Base Version. Displays a message on index.php if there is a new version available</li>
+	</ul>
 	
 	<h4>Version History - Gardnr Base</h4>
 	
