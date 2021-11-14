@@ -1,2 +1,0 @@
-# gardnr
-official gardnr github
